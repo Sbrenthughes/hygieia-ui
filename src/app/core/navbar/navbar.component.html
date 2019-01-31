@@ -1,0 +1,33 @@
+<div id="header">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+
+  <a class="dashboard-logo dashboard-logo-inverse" routerLink="/"></a>
+
+
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="welcome-header" *ngIf="isAuthenticated">
+      Welcome {{ userName }}
+      <span class="fa-stack fa-lg" (click)="loginOrOut()">
+         <i class="fa fa-circle fa-stack-2x"></i>
+         <i class="fa fa-power-off fa-stack-1x"></i>
+      </span>
+
+      <div class="divider"></div>
+      </span>
+
+      <span class="welcome-header" *ngIf="!isAuthenticated">
+      Login
+      <span class="fa-stack fa-lg" (click)="loginOrOut()">
+         <i class="fa fa-circle fa-stack-2x"></i>
+         <i class="fa fa-power-off fa-stack-1x"></i>
+      </span>
+
+      <div class="divider"></div>
+      </span>
+    </li>
+  </ul>
+
+  </nav>
+</div>

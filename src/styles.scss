@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+// ========================================
+// make all elements fill the screen
+html, body, #container {
+  height: 100%;
+}
+// remove the outline so we don't have it show with popovers
+:focus {
+  outline: none;
+}
+
+// have views fill containing area
+#container > div {
+  min-height: 100%;
+}
+
+// class to add pointer icon
+.clickable {
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+.widget-modal-heading {
+  border-bottom: 1px solid black;
+  color: black;
+  text-align: center;
+}
+.dashboard-type-list {
+  width: 100%;
+
+  .btn {
+    width: 33.333%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
