@@ -21,12 +21,10 @@ export class DashboardListService {
         type: type
       }
     });
-    // this.http.get<any[]>(' /api/dashboard/mydashboard/page/filter',  { params, observe: 'response' });
+    // Checking Auth so that we don't make unnecessary api calls
     if (this.authService.isAuthenticated()) {
       return this.http.get<any>(' /api/dashboard/mydashboard/page/filter', { params, observe: 'response' }).pipe(
         map(data => {
-          console.log('My Dashboards')
-          console.log(data)
           return <IDashboardsResponse>{
             data: data.body,
             total: data.headers.get('totalentities')
@@ -46,12 +44,8 @@ export class DashboardListService {
         type: type
       }
     });
-
-
     return this.http.get<any>(' /api/dashboard/page/filter', { params, observe: 'response' }).pipe(
       map(data => {
-        console.log('all Dashboards')
-        console.log(data)
         return <IDashboardsResponse>{
           data: data.body,
           total: data.headers.get('totalentities')

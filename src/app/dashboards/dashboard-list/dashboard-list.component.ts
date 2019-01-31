@@ -1,11 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
-
-import { DashboardListService } from './dashboard-list.service';
-
-import {IDashboards, IDashboardsParams} from './dashboards';
+import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
-import {IPaginationParams} from '../../shared/interfaces';
+
+// local imports
+import { DashboardListService } from './dashboard-list.service';
+import { IPaginationParams } from '../../shared/interfaces';
+import {IDashboards} from './dashboards';
+
 @Component({
   selector: 'app-dashboard-list',
   templateUrl: './dashboard-list.component.html',
@@ -36,7 +37,7 @@ export class DashboardListComponent implements OnInit {
     };
     this.findMyDashboards();
     this.findAllDashboards();
-
+    // Query for pull filtered owner dashboards
     this.queryField.valueChanges.pipe(
       debounceTime(500),
       distinctUntilChanged(),
@@ -48,7 +49,7 @@ export class DashboardListComponent implements OnInit {
         this.myDashboards = response.data;
         this.myDashboardCollectionSize = response.total;
       });
-
+    // Query for pull filtered 'All' dashboards
     this.queryField.valueChanges.pipe(
       debounceTime(500),
       distinctUntilChanged(),
@@ -68,7 +69,7 @@ export class DashboardListComponent implements OnInit {
     this.findMyDashboards();
     this.findAllDashboards();
   }
-
+  // Default function call for pulling users dashboards
   findMyDashboards(): void {
     let query: string;
     query = (this.queryField.value) ? this.queryField.value : '';
@@ -80,6 +81,7 @@ export class DashboardListComponent implements OnInit {
       error => console.log(error)
     );
   }
+  // Default function call for pulling all dashboards
   findAllDashboards(): void {
     let query: string;
     query = (this.queryField.value) ? this.queryField.value : '';
@@ -91,6 +93,7 @@ export class DashboardListComponent implements OnInit {
       error => console.log(error)
     );
   }
+  // Pagination page change function call
   myDashboardPageChange(params: IPaginationParams) {
     this.myDashboardListParams = <IPaginationParams>{
       page: params.page,
@@ -98,6 +101,7 @@ export class DashboardListComponent implements OnInit {
     };
     this.findMyDashboards();
   }
+  // Pagination page change function call
   allDashboardPageChange(params: IPaginationParams) {
     this.dashboardListParams = <IPaginationParams>{
       page: params.page,
