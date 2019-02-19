@@ -10,7 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [DashboardsRoutingModule.components, DashboardListComponent],
+  declarations: [DashboardsRoutingModule.components, DashboardListComponent ],
   imports: [
     CommonModule,
     DashboardsRoutingModule,

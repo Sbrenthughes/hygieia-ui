@@ -48,3 +48,4 @@ Thumbs.db
 
 /bin
 /target/
+proxy.conf.json

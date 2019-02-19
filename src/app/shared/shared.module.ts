@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 
 import { PaginationComponent } from './pagination/pagination.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [PaginationComponent],
@@ -14,6 +14,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   exports: [ CommonModule, FormsModule, PaginationComponent],
-  providers: [  ]
+  providers: [ NgbActiveModal ]
 })
 export class SharedModule { }
