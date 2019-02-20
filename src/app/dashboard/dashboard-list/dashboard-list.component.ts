@@ -5,7 +5,7 @@ import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 // local imports
 import { DashboardListService } from './dashboard-list.service';
 import { IPaginationParams } from '../../shared/interfaces';
-import {IDashboards} from './dashboards';
+import {IDashboards} from '../dashboard';
 
 @Component({
   selector: 'app-dashboard-list',

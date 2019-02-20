@@ -9,15 +9,17 @@
 <div class="row" *ngIf="myDashboards">
   <h3> My {{_dashboardType}} Dashboards</h3>
   <table class="table table-striped table-hover orders-table">
-  <tr *ngFor="let dashboard of myDashboards">
-  <td>{{ dashboard.title }}
-    <span class="pull-right">
+  <tr *ngFor="let dashboard of myDashboards" class="table-row">
+  <td routerLink="/dashboard/{{ dashboard.id }}/{{ dashboard.type | lowercase }}"  width="90%">
+    {{ dashboard.title }}
+  </td>
+  <td class="align-middle" width="10%">
+    <span>
       <span class="fa fa-lg fa-edit text-success"></span>
       &nbsp;
       <span class="fa fa-lg fa-trash text-danger"></span>
     </span>
   </td>
-
   </tr>
   </table>
   <app-pagination [totalSize]="myDashboardCollectionSize" (pageChange)="myDashboardPageChange($event)"></app-pagination>

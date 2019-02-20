@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import {IDashboards, IDashboardsResponse} from './dashboards';
+import { IDashboardsResponse } from '../dashboard';
 import {AuthService} from '../../core/services/auth.service';
 import {map} from 'rxjs/operators';
 import {IPaginationParams} from '../../shared/interfaces';
