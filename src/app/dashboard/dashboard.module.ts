@@ -9,10 +9,17 @@ import { DashboardListService } from './/dashboard-list/dashboard-list.service';
 import { SharedModule } from '../shared/shared.module';
 import { DashboardTeamComponent } from './dashboard-team/dashboard-team.component';
 import { DashboardProductComponent } from './dashboard-product/dashboard-product.component';
+import { WidgetComponent } from './widget/widget.component';
 
 
 @NgModule({
-  declarations: [DashboardRoutingModule.components, DashboardListComponent, DashboardTeamComponent, DashboardProductComponent ],
+  declarations: [
+    DashboardRoutingModule.components,
+    DashboardListComponent,
+    DashboardTeamComponent,
+    DashboardProductComponent,
+    WidgetComponent
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,

@@ -28,8 +28,8 @@
 <div class="row" *ngIf="allDashboards">
   <h3> All {{_dashboardType}} Dashboards</h3>
   <table class="table table-striped table-hover orders-table">
-    <tr *ngFor="let dashboard of allDashboards">
-      <td>{{ dashboard.title }}</td>
+    <tr *ngFor="let dashboard of allDashboards" class="table-row">
+      <td routerLink="/dashboard/{{ dashboard.id }}/{{ dashboard.type | lowercase }}">{{ dashboard.title }}</td>
     </tr>
   </table>
   <app-pagination [totalSize]="dashboardCollectionSize" (pageChange)="allDashboardPageChange($event)"></app-pagination>
